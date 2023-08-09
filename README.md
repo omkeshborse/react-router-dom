@@ -12,7 +12,7 @@ Key Features:
 Feel free to clone or fork this repository if you're also diving into React Router DOM. Let's master the art of navigation in React together! 🎉"
 
 ### Tools Used:
-- **Frontend:** React
+- **Frontend:** React React Router DOM
 
 
 
