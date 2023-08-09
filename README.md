@@ -13,7 +13,8 @@ Feel free to clone or fork this repository if you're also diving into React Rout
 
 ### Tools Used:
 - **Frontend:** React
-- **Database:** Local Storage
+
+
 
 ### Installation Process:
 
@@ -22,7 +23,7 @@ Feel free to clone or fork this repository if you're also diving into React Rout
 
    ```bash 
    git clone git@github.com:omkeshborse/react-router-dom.git
-   cd organizeme-app
+   cd react-router-dom
    npm install
    ```
 
