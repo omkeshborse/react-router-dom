@@ -1,24 +1,40 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import ProductList from "./components/ProductList";
-import ProductDetail from "./components/ProductDetail";
-import Contact from "./components/Contact";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+/* this is Do to Default Export  */
+import { Admin , Home , PageNotFound ,ProductsDetails ,ProductsList  } from "./pages";
+import { Contact, ContactEu, ContactIn, ContactUsa ,ContactOther} from "./pages/Contact";
+import {Header ,Footer} from './components'
+
+
+
 import "./App.css";
 
 function App() {
+  const user = true;
   return (
     <>
       <div className="App">
-      <Header />
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/products" element={<ProductList />}></Route>
-          <Route path="/products/1001" element={<ProductDetail />}></Route>
-          <Route path="/contact" element={<Contact />}></Route>
-        </Routes>
-      <Footer />
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<ProductsList />} />
+            <Route path="/products/:id" element={<ProductsDetails />} />
+            <Route path="/contact" element={<Contact />}>
+              {/* nested Routes */}
+              <Route path="in" element={<ContactIn />} />
+              <Route path="eu" element={<ContactEu />} />
+              <Route path="usa" element={<ContactUsa />} />
+              <Route path="*" element={<ContactOther />} />
+            </Route>
+
+            <Route
+              path="/admin"
+              element={user ? <Admin /> : <PageNotFound />}
+            />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
     </>
   );
